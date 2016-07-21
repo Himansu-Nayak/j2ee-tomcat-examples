@@ -1,0 +1,52 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+    * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.apache.openejb.server.httpd;
+
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+import java.net.URL;
+
+import org.apache.openejb.junit.ApplicationComposerRule;
+import org.apache.openejb.loader.IO;
+import org.apache.openejb.testing.*;
+import org.junit.Rule;
+import org.junit.Test;
+
+@EnableServices("http")
+@WebResource("src/test/web")
+@Classes
+@ContainerProperties(@ContainerProperties.Property(name = "httpejbd.useJetty", value = "fase"))
+public class ResourcesTest {
+    @Rule
+    public final ApplicationComposerRule container = new ApplicationComposerRule(this);
+
+    @RandomPort("http")
+    private URL context;
+
+    @Test
+    public void classloader() throws IOException {
+        assertTrue(IO.slurp(new URL(context.toExternalForm() + "openejb/foo.txt")).contains("from classloader"));
+        assertTrue(IO.slurp(new URL(context.toExternalForm() + "openejb/other/foo.txt")).contains("from classloader2"));
+    }
+
+    @Test
+    public void folder() throws IOException {
+        assertTrue(IO.slurp(new URL(context.toExternalForm() + "openejb/bar.txt")).contains("from web"));
+        assertTrue(IO.slurp(new URL(context.toExternalForm() + "openejb/sub/bar.txt")).contains("from web2"));
+    }
+}

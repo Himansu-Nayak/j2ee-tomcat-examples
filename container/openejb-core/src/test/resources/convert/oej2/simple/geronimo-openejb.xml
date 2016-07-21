@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:ejb-jar xmlns:ns5="http://tomee.apache.org/xml/ns/openejb-jar-2.2"
+             xmlns="http://geronimo.apache.org/xml/ns/deployment-1.2"
+>
+    <environment>
+        <moduleId>
+            <groupId>org.foo</groupId>
+            <artifactId>FooModule</artifactId>
+            <version>1.0</version>
+            <type>car</type>
+        </moduleId>
+        <dependencies>
+            <dependency>
+                <groupId>org.foo</groupId>
+                <artifactId>somedep</artifactId>
+                <version>1.0</version>
+                <type>car</type>
+            </dependency>
+        </dependencies>
+    </environment>
+</ns5:ejb-jar>
