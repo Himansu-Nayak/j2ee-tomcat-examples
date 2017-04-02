@@ -56,8 +56,10 @@ To build TomEE just execute:
 `$&gt; mvn clean install -pl tomee/apache-tomee -am -Dmaven.test.skip=true`  
 TomEE zip/tar.gz will be in tomee/apache-tomee/target  
   
-To build TomEE Embedded to be able to develop with its maven plugin execute:  
-  
+To build TomEE Embedded to be able to develop with its maven plugin execute:
+
+some test may fail so use mvn clean install -Dmaven.test.failure.ignore=true
+
 `$&gt; mvn clean install -pl maven/tomee-embedded-maven-plugin -am -Dmaven.test.skip=true`
 
 http://stackoverflow.com/questions/30535565/what-is-the-difference-between-tomcat-and-tomee-tomee-and-tomee-plus
