@@ -17,10 +17,14 @@
 
 package com.org.ejb.async;
 
-import static javax.ejb.LockType.READ;
-
+import javax.ejb.AsyncResult;
+import javax.ejb.Asynchronous;
+import javax.ejb.Lock;
+import javax.ejb.Singleton;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+
+import static javax.ejb.LockType.READ;
 
 @Singleton
 public class JobProcessor {

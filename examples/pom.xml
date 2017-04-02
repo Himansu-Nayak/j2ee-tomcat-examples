@@ -27,7 +27,7 @@
     <parent>
         <artifactId>j2ee-tomcat-examples</artifactId>
         <groupId>org.apache.tomee</groupId>
-        <version>7.0.1-SNAPSHOT</version>
+        <version>7.0.3</version>
     </parent>
 
     <artifactId>examples</artifactId>
@@ -46,7 +46,6 @@
         <module>async-postconstruct</module>
         <module>bean-validation-design-by-contract</module>
         <module>cdi-alternative-and-stereotypes</module>
-        <module>cdi-application-scope</module>
         <module>cdi-inject</module>
         <module>cdi-ejbcontext-jaas</module>
         <module>cdi-events</module>
@@ -54,8 +53,6 @@
         <module>cdi-produces-disposes</module>
         <module>cdi-produces-field</module>
         <module>cdi-realm</module>
-        <module>cdi-request-scope</module>
-        <module>cdi-session-scope</module>
         <module>change-jaxws-url</module>
         <module>component-interfaces</module>
         <module>client-resource-lookup-preview</module>
