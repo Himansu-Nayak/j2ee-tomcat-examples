@@ -129,7 +129,7 @@
         <version.shrinkwrap.descriptor>2.0.0-alpha-7</version.shrinkwrap.descriptor>
         <version.shrinkwrap.shrinkwrap>1.2.2</version.shrinkwrap.shrinkwrap>
 
-        <tomcat.version>8.5.2</tomcat.version>
+        <tomcat.version>8.5.40</tomcat.version>
 
         <cxf.version>3.1.6</cxf.version>
         <ehcache.version>2.9.0</ehcache.version>
@@ -339,7 +339,7 @@
                     <!-- the following settings are important when working with git -->
                     <localCheckout>true</localCheckout>
                     <pushChanges>false</pushChanges>
-                    <releaseProfiles></releaseProfiles>
+                    <releaseProfiles/>
                 </configuration>
             </plugin>
 
