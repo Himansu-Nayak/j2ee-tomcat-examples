@@ -98,7 +98,7 @@
         <!-- to change easily the javaee api version -->
         <version.javaee-api>7.0</version.javaee-api>
 
-        <openjpa.version>2.4.2</openjpa.version>
+        <openjpa.version>3.1.0</openjpa.version>
         <org.apache.openwebbeans.version>1.6.3</org.apache.openwebbeans.version>
         <jcs.version>2.0-M1</jcs.version>
         <johnzon.version>0.9.3-incubating</johnzon.version>
@@ -339,7 +339,7 @@
                     <!-- the following settings are important when working with git -->
                     <localCheckout>true</localCheckout>
                     <pushChanges>false</pushChanges>
-                    <releaseProfiles></releaseProfiles>
+                    <releaseProfiles/>
                 </configuration>
             </plugin>
 
